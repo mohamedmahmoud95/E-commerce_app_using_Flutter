@@ -81,7 +81,6 @@ class _ProductCardState extends State<ProductCard> {
 
                   const SizedBox(height: 10,),
 
-
                   RatingBarIndicator(
                     rating: widget.product.rating,
                     itemCount: 5,
