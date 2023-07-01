@@ -1,3 +1,5 @@
+import 'package:e_commerce_app/Models/product.dart';
+import 'package:e_commerce_app/Models/user.dart';
 import 'package:e_commerce_app/View/Reusable%20widgets/product_card.dart';
 import 'package:e_commerce_app/View/Reusable%20widgets/rating_bar_indicator.dart';
 import 'package:e_commerce_app/View/UI%20constants/project_colors.dart';
@@ -20,7 +22,7 @@ class _MarketScreenState extends State<MarketScreen> {
         elevation: 0,
       ),
 
-      body: const ProductCard(),
+      body:  ProductCard(product: handbag, appUser: currentAppUser,),
     );
   }
 }

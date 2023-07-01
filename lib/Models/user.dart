@@ -1,4 +1,6 @@
 
+import 'package:e_commerce_app/Models/product.dart';
+
 class User{
   String? firstName;
   String? lastName;
@@ -11,6 +13,7 @@ class User{
   String? password;
   String? gender;
   String? address;
+  List<Product>? inCartProducts;
 
   //constructor
   User({
@@ -23,6 +26,7 @@ class User{
     this.email,
     this.userName,
     this.password,
+    this.inCartProducts,
   });
 }
 
