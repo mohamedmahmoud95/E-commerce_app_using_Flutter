@@ -35,7 +35,7 @@ class _ProductCardState extends State<ProductCard> {
         child: Card(
 
           child: SizedBox(
-            width: width/2 - 40,
+            width: width/2 - 30,
             height: 250,
             child: Padding(
               padding: const EdgeInsets.all(8.0),

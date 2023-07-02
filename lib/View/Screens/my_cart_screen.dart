@@ -55,7 +55,9 @@ class _MyCartScreenState extends State<MyCartScreen> {
           ],
         ),
 
-        body: SingleChildScrollView(
+        body: widget.appUser.inCartProducts!.isEmpty?
+            const Center(child: Text("Cart is empty!", style: TextStyle(fontSize: 30),),) :
+        SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

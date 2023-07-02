@@ -98,7 +98,7 @@ class _ProductCardInMyCartScreenState extends State<ProductCardInMyCartScreen> {
                   ),
                       Text("$numInCart", style: const TextStyle(color: Colors.black, fontSize: 15)),
 
-                      GestureDetector(child: Text("+",style: TextStyle(color: Colors.black, fontSize: 15),),
+                      GestureDetector(child: const Text("+",style: TextStyle(color: Colors.black, fontSize: 15),),
                       onTap: (){
                           setState(() {
                               numInCart++;
