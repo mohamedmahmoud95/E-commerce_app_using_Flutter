@@ -17,7 +17,6 @@ class MyCartScreen extends StatefulWidget {
 }
 
 class _MyCartScreenState extends State<MyCartScreen> {
-  int numInCart = 1;
 
   // @override
   // void initState(){

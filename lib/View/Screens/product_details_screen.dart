@@ -235,6 +235,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                     if (widget.product.numInCart > 0) {
                                       widget.product. numInCart--;
                                     }
+                                    else
+                                      {
+                                        widget.appUser.inCartProducts?.remove(widget.product);
+                                      }
                                   });
                                 },
                                 child: const Text(
@@ -274,7 +278,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                 if (widget.appUser.inCartProducts!.contains(widget.product) == false) {
                                   widget.appUser.inCartProducts
                                     ?.add(widget.product);
-                                  widget.product.numInCart++;
+                                  if (  widget.product.numInCart  < 1) {
+                                    widget.product.numInCart = 1;
+                                  }
                                 }
                                 else
                                   {

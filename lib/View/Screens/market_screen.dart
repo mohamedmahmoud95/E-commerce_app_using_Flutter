@@ -29,8 +29,23 @@ class _MarketScreenState extends State<MarketScreen> {
       backgroundColor: mainWhite,
       appBar: AppBar(
         backgroundColor: mainWhite,
+        leading: CircleAvatar(
+            backgroundColor: lightOrange,
+            child: IconButton(onPressed: (){
+              //Navigate to user profile screen
+            }, icon: Icon(Icons.person, color: darkOrange,),)),
         title: const Text("Market", style: TextStyle(color: darkOrange, fontWeight: FontWeight.w500 , fontSize: 30),),
         elevation: 0,
+        actions: [
+          CircleAvatar(
+            backgroundColor: lightOrange,
+            child: IconButton(onPressed: (){
+              //navigate to notification screen
+            }, icon:  Icon(Icons.notifications, color: Colors.grey.shade800,)),
+          ),
+          const SizedBox(width: 10,),
+        ],
+        centerTitle: true,
       ),
 
       body:  Center(
