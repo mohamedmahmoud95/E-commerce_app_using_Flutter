@@ -45,6 +45,14 @@ class _MyCartScreenState extends State<MyCartScreen> {
           backgroundColor: Colors.white10,
           title:  Text("My Cart", style: TextStyle(color: Colors.orange.shade900, fontSize: 25, fontWeight: FontWeight.normal),),
           centerTitle: true,
+
+          actions: [
+            IconButton(onPressed: (){
+              setState(() {
+                widget.appUser.inCartProducts?.clear();
+              });
+            }, icon:  Icon(Icons.delete, color: Colors.grey.shade800,)),
+          ],
         ),
 
         body: SingleChildScrollView(

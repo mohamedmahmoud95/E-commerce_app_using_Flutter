@@ -73,17 +73,19 @@ class _ProductCardState extends State<ProductCard> {
                     children: [
                       Text(
                         "\$${widget.product.price}", style: const TextStyle(fontSize: 15,),),
-                      InkWell(child:  Icon(Icons.shopping_cart,  color:
-                      addedToCart? Colors.deepOrange : Colors.grey.shade800, size: 30,),
+                      InkWell(child:  Icon(Icons.shopping_cart,
+                        color:  widget.appUser.inCartProducts!.contains(widget.product) ?
+                       Colors.deepOrange : Colors.grey.shade800, size: 30,),
                         onTap: (){
                           setState(() {
                             addedToCart = ! addedToCart;
 
-
-                            addedToCart?
-                            widget.appUser.inCartProducts?.add(widget.product)
+                            if (addedToCart == true) {
+                              widget.appUser.inCartProducts!.contains(widget.product) ?
+                            widget.appUser.inCartProducts?.remove(widget.product)
                                 :
-                            widget.appUser.inCartProducts?.remove(widget.product);
+                            widget.appUser.inCartProducts?.add(widget.product);
+                            }
                           });
                         }
                         ,),
