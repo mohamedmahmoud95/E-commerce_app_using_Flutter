@@ -1,6 +1,6 @@
 # E-commerce_app_using_Flutter
 
-<img width="351" alt="Screenshot 2023-07-03 at 12 29 06 AM" src="https://github.com/mohamedmahmoud95/E-commerce_app_using_Flutter/assets/46673407/adc20de7-a6c5-4ee9-a731-c1419fbc1c95">
+<img width="343" alt="Screenshot 2023-07-03 at 12 36 43 AM" src="https://github.com/mohamedmahmoud95/E-commerce_app_using_Flutter/assets/46673407/2006bfdd-018d-40c9-9f8c-4ae0d2c2d43e">
 
 
 <img width="348" alt="Screenshot 2023-07-03 at 12 30 25 AM" src="https://github.com/mohamedmahmoud95/E-commerce_app_using_Flutter/assets/46673407/1c9e7440-f185-4683-afad-fda06b58ac3f">
