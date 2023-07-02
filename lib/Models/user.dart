@@ -30,4 +30,15 @@ class User{
   });
 }
 
-User currentAppUser = User();
+User currentAppUser = User(
+  firstName: "firstName",
+  lastName: "lastName",
+  inCartProducts: [handbag, shoe],
+  profilePicUrl: "https://w7.pngwing.com/pngs/537/866/png-transparent-flutter-hd-logo.png",
+  userID: "dfdf",
+  userName: "userName",
+  dateOfBirth: DateTime(1995,3,7),
+
+
+
+);

@@ -28,6 +28,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    final double width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
@@ -60,11 +63,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Container(
-                          padding: EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(8),
                           color: Colors.orange.shade900,
                           child: Text(
                             " EGP${widget.product.price} ",
-                            style: TextStyle(color: Colors.white, fontSize: 20),
+                            style: const TextStyle(color: Colors.white, fontSize: 20),
                           ),
                         ),
                       ],
@@ -154,7 +157,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "  ${widget.product.name}",
+                                "  ${widget.product.name!}",
                                 style: const TextStyle(
                                     color: Colors.black, fontSize: 30),
                               ),
