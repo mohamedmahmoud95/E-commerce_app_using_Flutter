@@ -87,7 +87,11 @@ class _ProductCardState extends State<ProductCard> {
                               widget.product.numInCart = 0
                             }
                                 :
-                            widget.appUser.inCartProducts?.add(widget.product);
+                              {
+                                widget.appUser.inCartProducts?.add(
+                                    widget.product),
+                                widget.product.numInCart = 1
+                              };
                             }
                           });
                         }
