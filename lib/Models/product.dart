@@ -8,6 +8,7 @@ class Product {
   String? category;
   String? description;
   String? returnPolicy;
+  int numInCart; //number/count of item of this product added to cart
 
   //constructor
   Product(
@@ -20,6 +21,7 @@ class Product {
         this.category,
         this.description,
         this.returnPolicy,
+        this.numInCart = 0,
       });
 
 }

@@ -82,7 +82,10 @@ class _ProductCardState extends State<ProductCard> {
 
                             if (addedToCart == true) {
                               widget.appUser.inCartProducts!.contains(widget.product) ?
-                            widget.appUser.inCartProducts?.remove(widget.product)
+                            {
+                              widget.appUser.inCartProducts?.remove(widget.product),
+                              widget.product.numInCart = 0
+                            }
                                 :
                             widget.appUser.inCartProducts?.add(widget.product);
                             }

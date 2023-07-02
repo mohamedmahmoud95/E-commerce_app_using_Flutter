@@ -21,7 +21,6 @@ class ProductDetailsScreen extends StatefulWidget {
 }
 
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
-  int numInCart = 0;
   bool addedToFavorite = false;
   Color favColor = Colors.orange.shade200;
   Color regularColor = Colors.orange.shade100;
@@ -233,8 +232,8 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                               TextButton(
                                 onPressed: () {
                                   setState(() {
-                                    if (numInCart > 0) {
-                                      numInCart--;
+                                    if (widget.product.numInCart > 0) {
+                                      widget.product. numInCart--;
                                     }
                                   });
                                 },
@@ -244,13 +243,13 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                       color: Colors.black, fontSize: 20),
                                 ),
                               ),
-                              Text("$numInCart",
+                              Text("${widget.product.numInCart}",
                                   style: const TextStyle(
                                       color: Colors.black, fontSize: 20)),
                               TextButton(
                                 onPressed: () {
                                   setState(() {
-                                    numInCart++;
+                                    widget.product.numInCart++;
                                   });
                                 },
                                 child: const Text(
@@ -272,8 +271,15 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                 const EdgeInsets.fromLTRB(20, 12, 20, 12)),
                             onPressed: () {
                               setState(() {
-                                widget.appUser.inCartProducts
+                                if (widget.appUser.inCartProducts!.contains(widget.product) == false) {
+                                  widget.appUser.inCartProducts
                                     ?.add(widget.product);
+                                  widget.product.numInCart++;
+                                }
+                                else
+                                  {
+                                    widget.product.numInCart++;
+                                  }
                               });
                             },
                             child: const Text(

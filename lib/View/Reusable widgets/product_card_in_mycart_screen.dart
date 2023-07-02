@@ -18,7 +18,6 @@ class ProductCardInMyCartScreen extends StatefulWidget {
 }
 
 class _ProductCardInMyCartScreenState extends State<ProductCardInMyCartScreen> {
-  int numInCart = 1;
   @override
   Widget build(BuildContext context) {
 
@@ -76,10 +75,10 @@ class _ProductCardInMyCartScreenState extends State<ProductCardInMyCartScreen> {
                   GestureDetector(child: const Text("-",style: TextStyle(color: Colors.black, fontSize: 15),),
                     onTap: (){
                           setState(() {
-                            if(numInCart>0) {
-                              numInCart--;
+                            if(widget.product.numInCart>0) {
+                              widget.product.  numInCart--;
                             }
-                            else if (numInCart == 0)
+                            else if (widget.product.numInCart == 0)
                               {
                                 setState(() {
                                   widget.appUser.inCartProducts?.remove(widget.product);
@@ -96,12 +95,12 @@ class _ProductCardInMyCartScreenState extends State<ProductCardInMyCartScreen> {
 
                         },
                   ),
-                      Text("$numInCart", style: const TextStyle(color: Colors.black, fontSize: 15)),
+                      Text("${widget.product.numInCart}", style: const TextStyle(color: Colors.black, fontSize: 15)),
 
                       GestureDetector(child: const Text("+",style: TextStyle(color: Colors.black, fontSize: 15),),
                       onTap: (){
                           setState(() {
-                              numInCart++;
+                            widget.product.numInCart++;
                             });
                             }
                         ,),

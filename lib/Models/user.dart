@@ -33,7 +33,7 @@ class User{
 User currentAppUser = User(
   firstName: "firstName",
   lastName: "lastName",
-  inCartProducts: [handbag, shoe],
+  inCartProducts: [],
   profilePicUrl: "https://w7.pngwing.com/pngs/537/866/png-transparent-flutter-hd-logo.png",
   userID: "dfdf",
   userName: "userName",

@@ -19,14 +19,14 @@ class MyCartScreen extends StatefulWidget {
 class _MyCartScreenState extends State<MyCartScreen> {
   int numInCart = 1;
 
-  @override
-  void initState(){
-    super.initState();
-    if (widget.appUser.inCartProducts!.length > 1) {
-      widget.appUser.inCartProducts =
-          widget.appUser.inCartProducts?.reversed.toList();
-    }
-  }
+  // @override
+  // void initState(){
+  //   super.initState();
+  //   // if (widget.appUser.inCartProducts!.length > 1) {
+  //   //   widget.appUser.inCartProducts =
+  //   //       widget.appUser.inCartProducts?.reversed.toList();
+  //   // }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +41,12 @@ class _MyCartScreenState extends State<MyCartScreen> {
         appBar: AppBar(
           elevation: 0,
           leading: BackButton(color: Colors.orange.shade900,
-            onPressed: (){Navigator.of(context).push(MaterialPageRoute(builder: (context) => const MarketScreen()));},),
+            onPressed: (){Navigator.of(context).push(MaterialPageRoute(builder:
+                (context) => const MarketScreen()));},),
           backgroundColor: Colors.white10,
-          title:  Text("My Cart", style: TextStyle(color: Colors.orange.shade900, fontSize: 25, fontWeight: FontWeight.normal),),
+          title:  Text("My Cart",
+            style: TextStyle(color: Colors.orange.shade900,
+                fontSize: 25, fontWeight: FontWeight.normal),),
           centerTitle: true,
 
           actions: [
@@ -56,7 +59,8 @@ class _MyCartScreenState extends State<MyCartScreen> {
         ),
 
         body: widget.appUser.inCartProducts!.isEmpty?
-            const Center(child: Text("Cart is empty!", style: TextStyle(fontSize: 30),),) :
+            const Center(child: Text("Cart is empty!",
+              style: TextStyle(fontSize: 30),),) :
         SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -87,7 +91,8 @@ class _MyCartScreenState extends State<MyCartScreen> {
                   onPressed: (){
 
                   },
-                  child: const Text("checkout",style: TextStyle(color: Colors.white, fontSize: 20, ))),
+                  child: const Text("checkout",
+                      style: TextStyle(color: Colors.white, fontSize: 20, ))),
 
               const SizedBox(height: 30,),
 
