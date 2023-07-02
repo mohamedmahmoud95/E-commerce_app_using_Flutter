@@ -36,7 +36,6 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             appBar: AppBar(
               backgroundColor: Colors.white10,
               elevation: 0,
-//          title: Text(widget.product.name, style: const TextStyle(color: Colors.black),),
 
               leading: BackButton(
                 color: Colors.black,
@@ -49,7 +48,6 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(8, 0, 8, 8),
                 child: Column(
-                  //  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Center(
                       child: SizedBox(

@@ -1,7 +1,6 @@
 import 'package:e_commerce_app/Models/product.dart';
 import 'package:e_commerce_app/Models/user.dart';
 import 'package:e_commerce_app/View/Reusable%20widgets/product_card.dart';
-import 'package:e_commerce_app/View/Reusable%20widgets/rating_bar_indicator.dart';
 import 'package:e_commerce_app/View/UI%20constants/project_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +32,7 @@ class _MarketScreenState extends State<MarketScreen> {
             backgroundColor: lightOrange,
             child: IconButton(onPressed: (){
               //Navigate to user profile screen
-            }, icon: Icon(Icons.person, color: darkOrange,),)),
+            }, icon: const Icon(Icons.person, color: darkOrange,),)),
         title: const Text("Market", style: TextStyle(color: darkOrange, fontWeight: FontWeight.w500 , fontSize: 30),),
         elevation: 0,
         actions: [
