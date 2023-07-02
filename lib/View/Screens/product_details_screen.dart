@@ -54,20 +54,20 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                   children: [
                     Center(
                       child: SizedBox(
-                        height: 300,
+                        height: height/3,
                         child: Image.network(widget.product.picUrl!),
                       ),
                     ),
 
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Container(
                           padding: const EdgeInsets.all(8),
                           color: Colors.orange.shade900,
                           child: Text(
                             " EGP${widget.product.price} ",
-                            style: const TextStyle(color: Colors.white, fontSize: 20),
+                            style: const TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w500 ),
                           ),
                         ),
                       ],
@@ -170,7 +170,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                               ),
 
                               Container(
-                                width: 350,
+                                width: width/1.2,
                                 child: ExpansionTile(
                                   title: const Text("Description",
                                       style: TextStyle(
@@ -186,7 +186,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                               ),
 
                               Container(
-                                width: 350,
+                                width: width/1.2,
                                 child: ExpansionTile(
                                   title: const Text("Return policy",
                                       style: TextStyle(
@@ -206,16 +206,13 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                       ),
                     ),
                     const Padding(
-                      padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                      padding: EdgeInsets.fromLTRB(30, 10, 30, 20),
                       child: Divider(
                         color: Colors.grey,
                         thickness: 1,
                       ),
                     ),
 
-                    const SizedBox(
-                      height: 20,
-                    ),
 
                     //add and minus widget (container)
                     Row(
