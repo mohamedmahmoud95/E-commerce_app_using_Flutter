@@ -2,6 +2,7 @@ import 'package:e_commerce_app/Models/user.dart';
 import 'package:flutter/material.dart';
 
 import '../Reusable widgets/product_card_in_mycart_screen.dart';
+import '../UI constants/project_colors.dart';
 import 'market_screen.dart';
 
 class MyCartScreen extends StatefulWidget {
@@ -33,20 +34,17 @@ class _MyCartScreenState extends State<MyCartScreen> {
         appBar: AppBar(
           elevation: 0,
           leading: BackButton(
-            color: Colors.orange.shade900,
+            color: darkOrange,
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const MarketScreen()));
             },
           ),
           backgroundColor: Colors.white10,
-          title: Text(
+          title: const Text(
             "My Cart",
-            style: TextStyle(
-                color: Colors.orange.shade900,
-                fontSize: 25,
-                fontWeight: FontWeight.normal),
-          ),
+            style: TextStyle(color: darkOrange, fontWeight: FontWeight.w500 , fontSize: 30),),
+
           centerTitle: true,
           actions: [
             IconButton(
@@ -57,7 +55,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                 },
                 icon: Icon(
                   Icons.delete,
-                  color: Colors.grey.shade800,
+                  color: Colors.grey.shade700,
                 )),
           ],
         ),

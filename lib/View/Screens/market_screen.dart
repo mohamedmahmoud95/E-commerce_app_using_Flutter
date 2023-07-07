@@ -33,7 +33,8 @@ class _MarketScreenState extends State<MarketScreen> {
             child: IconButton(onPressed: (){
               //Navigate to user profile screen
             }, icon: const Icon(Icons.person, color: darkOrange,),)),
-        title: const Text("Market", style: TextStyle(color: darkOrange, fontWeight: FontWeight.w500 , fontSize: 30),),
+        title: const Text("Purse-nality",
+          style: TextStyle(color: darkOrange, fontWeight: FontWeight.w500 , fontSize: 30),),
         elevation: 0,
         actions: [
           CircleAvatar(
