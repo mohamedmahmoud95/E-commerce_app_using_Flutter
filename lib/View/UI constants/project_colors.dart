@@ -15,6 +15,7 @@ const lightLavender = Color.fromARGB(255,239,239,250);
 
 const navyBlue = Color.fromARGB(255, 8, 27,75);
 const mainBlue = Color.fromARGB (255, 1,105,255);
+const darkBlue = Color.fromARGB(255,20,36,91);
 
 const calmBlue = Color(0xFF5190d6);
 const lightBlue = Color(0xFFe0e4e8);

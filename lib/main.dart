@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/View/Screens/landing_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'View/Screens/market_screen.dart';
@@ -18,7 +19,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MarketScreen(),
+      home: LandingScreen(),
+      //MarketScreen(),
     );
   }
 }
