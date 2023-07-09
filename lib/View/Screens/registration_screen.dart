@@ -44,15 +44,37 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           )
         ], //to center title
       ),
-      body: Padding(
+      body:
+      Stack(
+        children: [
+      Positioned(
+      child: Container(
+      height: 150,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: const AssetImage('assets/purse.png', ),
+            fit: BoxFit.contain,
+            colorFilter: ColorFilter.mode(
+              Colors.white.withOpacity(1),
+              BlendMode.dstATop,
+            ),
+          ),
+        ),
+      ),
+    ),
+
+      Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(
+              height: 50,
+            ),
             const Text(
               'Create a new account',
               style: TextStyle(
-                  color: darkOrange, fontWeight: FontWeight.w700, fontSize: 20),
+                  color: darkOrange, fontWeight: FontWeight.w500, fontSize: 30),
             ),
             const SizedBox(
               height: 50,
@@ -155,6 +177,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             ),
           ],
         ),
+      ),
+    ],
       ),
     );
   }
