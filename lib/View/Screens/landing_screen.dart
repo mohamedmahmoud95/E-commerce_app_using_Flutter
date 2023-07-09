@@ -1,3 +1,6 @@
+import 'package:e_commerce_app/View/Screens/market_screen.dart';
+import 'package:e_commerce_app/View/Screens/signin_screen.dart';
+import 'package:e_commerce_app/View/Screens/signup_screen.dart';
 import 'package:e_commerce_app/View/UI%20constants/project_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -32,7 +35,9 @@ class _LandingScreenState extends State<LandingScreen> {
                 RectangularButton(
                   horizontalPadding: 16,
                   backgroundColor: mainWhite,
-                onPressed: () {  },
+                onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> MarketScreen()));
+                },
                 child: const Text("skip",style: TextStyle(fontSize: 16, color: darkOrange, fontWeight: FontWeight.w700),),)
               ],
             ),
@@ -40,10 +45,17 @@ class _LandingScreenState extends State<LandingScreen> {
 
             const Column(
               children: [
-                Text("Purse-nality",style: TextStyle(fontSize: 16, color: mainWhite, fontWeight: FontWeight.w700),),
-                Text("Best purse, for the best Person",style: TextStyle(fontSize: 16, color: mainWhite, fontWeight: FontWeight.w700),),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Purse",style: TextStyle(fontSize: 40, color: mainOrange, fontWeight: FontWeight.w700),),
+                    Text("-nality",style: TextStyle(fontSize: 40, color: mainWhite, fontWeight: FontWeight.w700),),
 
+                  ],
+                ),
 
+                SizedBox(height: 20,),
+                Text("Fashion Meets Functionality!",style: TextStyle(fontSize: 25, color: mainWhite, fontWeight: FontWeight.w700),),
 
               ],
             ),
@@ -53,7 +65,10 @@ class _LandingScreenState extends State<LandingScreen> {
                 RectangularButton(
                   horizontalPadding: width/8,
                   backgroundColor: darkOrange,
-                  onPressed: () {  },
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> SignUpScreen()));
+
+                  },
                   child: const Text("Register", style: TextStyle(fontSize: 16, color: mainWhite, fontWeight: FontWeight.w700),),),
 
 
@@ -61,7 +76,10 @@ class _LandingScreenState extends State<LandingScreen> {
                   horizontalPadding: width/8,
 
                   backgroundColor: mainWhite,
-                  onPressed: () {  },
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> SignInScreen()));
+
+                  },
 
                   child: const Text("Sign in", style: TextStyle(fontSize: 16, color: darkOrange, fontWeight: FontWeight.w700),),),
               ],

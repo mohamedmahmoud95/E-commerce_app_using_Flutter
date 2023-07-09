@@ -12,7 +12,9 @@ class RectangularButton extends StatefulWidget {
       {Key? key,
       required this.child,
       required this.backgroundColor,
-      required this.onPressed, required this.horizontalPadding})
+      required this.onPressed,
+        required this.horizontalPadding
+      })
       : super(key: key);
 
   @override
@@ -26,7 +28,7 @@ class _RectangularButtonState extends State<RectangularButton> {
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
         onTap: (){
-          widget.onPressed;
+          widget.onPressed();
         },
 
         child: Container(
