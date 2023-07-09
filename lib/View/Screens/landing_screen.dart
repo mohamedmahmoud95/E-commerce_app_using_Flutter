@@ -1,6 +1,6 @@
 import 'package:e_commerce_app/View/Screens/market_screen.dart';
 import 'package:e_commerce_app/View/Screens/signin_screen.dart';
-import 'package:e_commerce_app/View/Screens/signup_screen.dart';
+import 'package:e_commerce_app/View/Screens/registration_screen.dart';
 import 'package:e_commerce_app/View/UI%20constants/project_colors.dart';
 import 'package:flutter/material.dart';
 
@@ -87,7 +87,7 @@ class _LandingScreenState extends State<LandingScreen> {
                   horizontalPadding: width/8,
                   backgroundColor: darkOrange,
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> SignUpScreen()));
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=> RegistrationScreen()));
 
                   },
                   child: const Text("Register", style: TextStyle(fontSize: 16, color: mainWhite, fontWeight: FontWeight.w700),),),
