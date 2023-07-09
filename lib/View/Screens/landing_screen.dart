@@ -42,23 +42,44 @@ class _LandingScreenState extends State<LandingScreen> {
               ],
             ),
 
+            Container(
+              height: height/2,
+              child: Stack(
+                children: [
+                  Positioned(
+                    top: 50,
+                    left: width/3,
+                    child: SizedBox(
+                        height: 400,
+                        child: Image.asset("assets/purse.png")),
+                  ),
 
-            const Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+              const Positioned(
+                top: 50,
+                child: Column(
                   children: [
-                    Text("Purse",style: TextStyle(fontSize: 40, color: mainOrange, fontWeight: FontWeight.w700),),
-                    Text("-nality",style: TextStyle(fontSize: 40, color: mainWhite, fontWeight: FontWeight.w700),),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Purse",style: TextStyle(fontSize: 40, color: mainOrange, fontWeight: FontWeight.w500),),
+                        Text("-nality",style: TextStyle(fontSize: 40, color: mainWhite, fontWeight: FontWeight.w500),),
+
+                      ],
+                    ),
+
+                    SizedBox(height: 20,),
+                    Text("Fashion Meets Functionality!",style: TextStyle(fontSize: 25, color: mainWhite, fontWeight: FontWeight.w500),),
 
                   ],
                 ),
-
-                SizedBox(height: 20,),
-                Text("Fashion Meets Functionality!",style: TextStyle(fontSize: 25, color: mainWhite, fontWeight: FontWeight.w700),),
-
-              ],
+              ),
+           ],
+        ),
             ),
+
+
+
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
