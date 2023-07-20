@@ -35,7 +35,7 @@ Product handbag = Product(
     price: 200,
     description:
     'Diligently crafted product, designed with exquisite attention to detail, using premium materials that ensure durability and elevate your style.',
-    picUrl: "https://w7.pngwing.com/pngs/537/866/png-transparent-flutter-hd-logo.png"
+    picUrl: "assets/purse.png"
   //  "assets/images/handbag.png"
 );
 Product hoodie = Product(
@@ -46,7 +46,7 @@ Product hoodie = Product(
     price: 250,
     description:
     'Diligently crafted product, designed with exquisite attention to detail, using premium materials that ensure durability and elevate your style.',
-    picUrl: "assets/images/hoodie.png");
+    picUrl: "assets/images/purse1.png");
 Product shoe = Product(
     name: "Shoe",
     category: 'Shoes',
@@ -55,7 +55,7 @@ Product shoe = Product(
     price: 300,
     description:
     'Diligently crafted product, designed with exquisite attention to detail, using premium materials that ensure durability and elevate your style.',
-    picUrl: "https://i.ebayimg.com/images/g/izkAAOSw8LxjlsZ6/s-l400.png");
+    picUrl: "assets/images/purse3.png");
 
 Product backpack1 = Product(
     name: "Backpack1",
@@ -65,7 +65,7 @@ Product backpack1 = Product(
     price: 300,
     description:
     'Diligently crafted product, designed with exquisite attention to detail, using premium materials that ensure durability and elevate your style.',
-    picUrl: "assets/images/backpacks/backpack1.png");
+    picUrl: "assets/images/purse4.png");
 Product backpack2 = Product(
     name: "Backpack2",
     category: 'Bags',
@@ -74,7 +74,7 @@ Product backpack2 = Product(
     price: 250,
     description:
     'Diligently crafted product, designed with exquisite attention to detail, using premium materials that ensure durability and elevate your style.',
-    picUrl: "assets/images/backpacks/backpack2.png");
+    picUrl: "assets/images/purse5.png");
 Product backpack3 = Product(
     name: "Backpack3",
     category: 'Bags',
@@ -83,7 +83,7 @@ Product backpack3 = Product(
     price: 200,
     description:
     'Diligently crafted product, designed with exquisite attention to detail, using premium materials that ensure durability and elevate your style.',
-    picUrl: "assets/images/backpacks/backpack3.png");
+    picUrl: "assets/images/purse6.png");
 Product backpack4 = Product(
     name: "Backpack4",
     category: 'Bags',
@@ -92,7 +92,7 @@ Product backpack4 = Product(
     price: 2750,
     description:
     'Diligently crafted product, designed with exquisite attention to detail, using premium materials that ensure durability and elevate your style.',
-    picUrl: "assets/images/backpacks/backpack4.png");
+    picUrl: "assets/images/purse7.png");
 
 List<Product> sampleProducts = [
   shoe,
@@ -120,7 +120,7 @@ Product sampleProduct1 = Product(
         "- Long Shoulder Straps\n"
         "- Water-Resistant 900d Polyester\n",
     returnPolicy: "Free return within 15 days of purchase\n",
-    picUrl: "https://www.pngmart.com/files/22/Handbag-PNG.png");
+    picUrl: "assets/purse1.png");
 Product sampleProduct2 = Product(
     name: 'Hand bag2',
     rating: 3,
@@ -132,8 +132,8 @@ Product sampleProduct2 = Product(
         "- Water-Resistant 900d Polyester\n",
     returnPolicy: "Free return within 15 days of purchase\n",
 
-    picUrl:
-    "https://www.nicepng.com/png/detail/951-9517748_dior-cruise-blue-patent-lady-dior-bag-designer.png");
+    picUrl: "assets/purse8.png"
+    );
 Product sampleProduct3 = Product(
     name: 'Hand bag3',
     rating: 2,
@@ -145,7 +145,8 @@ Product sampleProduct3 = Product(
         "- Water-Resistant 900d Polyester\n",
     returnPolicy: "Free return within 15 days of purchase\n",
 
-    picUrl: "https://www.pngmart.com/files/15/Orange-Ladies-Handbag-PNG.png");
+    picUrl: "assets/purse4.png"
+);
 Product sampleProduct4 = Product(
     name: 'Hand bag4',
     rating: 5,
@@ -157,8 +158,8 @@ Product sampleProduct4 = Product(
         "- Water-Resistant 900d Polyester\n",
     returnPolicy: "Free return within 15 days of purchase\n",
 
-    picUrl:
-    "https://www.cartier.com/variants/images/25372685655516962/img1/w400.jpg");
+    picUrl: "assets/purse5.png");
+
 Product sampleProduct5 = Product(
     name: 'Hand bag5',
     rating: 4.5,
@@ -170,7 +171,7 @@ Product sampleProduct5 = Product(
         "- Water-Resistant 900d Polyester\n",
     returnPolicy: "Free return within 15 days of purchase\n",
 
-    picUrl:
-    "https://www.pngitem.com/pimgs/m/194-1942574_transparent-purses-black-handbag-amal-clooney-bags-hd.png");
+    picUrl: "assets/purse6.png");
+
 
 

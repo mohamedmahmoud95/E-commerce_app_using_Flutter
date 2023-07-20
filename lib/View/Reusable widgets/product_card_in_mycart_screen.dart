@@ -10,7 +10,7 @@ import '../Screens/my_cart_screen.dart';
 
 class ProductCardInMyCartScreen extends StatefulWidget {
   final Product product;
-  final User appUser;
+  final AppUser appUser;
   const ProductCardInMyCartScreen({Key? key, required this.product, required this.appUser}) : super(key: key);
 
   @override
@@ -76,16 +76,16 @@ class _ProductCardInMyCartScreenState extends State<ProductCardInMyCartScreen> {
                     onTap: (){
                           setState(() {
                             if(widget.product.numInCart>0) {
-                              widget.product.  numInCart--;
+                              widget.product.numInCart--;
                             }
-                            else if (widget.product.numInCart == 0)
+                             if (widget.product.numInCart == 0)
                               {
                                 setState(() {
                                   widget.appUser.inCartProducts?.remove(widget.product);
                                   //No, let's refresh the current page (please be careful, when used wrong, this might mis-up the context stack (stack of screens))
                                   Navigator.pushAndRemoveUntil(
                                     context,
-                                    MaterialPageRoute(builder: (context) => MyCartScreen(appUser: currentAppUser) ),
+                                    MaterialPageRoute(builder: (context) => MyCartScreen(appUser: sampleAppUser) ),
                                         (
                                         Route<dynamic> route) => false,
                                   );

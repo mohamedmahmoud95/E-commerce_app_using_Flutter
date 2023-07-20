@@ -8,7 +8,7 @@ import '../Screens/product_details_screen.dart';
 
 class ProductCard extends StatefulWidget {
   final Product product;
-  final User appUser;
+  final AppUser appUser;
 
   ProductCard({Key? key, required this.product, required this.appUser}) : super(key: key);
 
@@ -28,7 +28,7 @@ class _ProductCardState extends State<ProductCard> {
         onTap: (){
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (context) =>  (ProductDetailsScreen(product: widget.product, appUser: currentAppUser,)),
+              builder: (context) =>  (ProductDetailsScreen(product: widget.product, appUser: sampleAppUser,)),
             ),
           );
         },
@@ -46,7 +46,10 @@ class _ProductCardState extends State<ProductCard> {
                     child: Container(
                       color: Colors.grey[100],
                       height: 140,
-                      child: Image.network(widget.product.picUrl!,),
+                      child: Hero(
+                          tag: widget.product.picUrl!,
+                          child: Image.asset(widget.product.picUrl!,)
+                      ),
                     ),
                   ),
 
@@ -73,6 +76,9 @@ class _ProductCardState extends State<ProductCard> {
                     children: [
                       Text(
                         "\$${widget.product.price}", style: const TextStyle(fontSize: 15,),),
+
+
+
                       InkWell(child:  Icon(Icons.shopping_cart,
                         color:  widget.appUser.inCartProducts!.contains(widget.product) ?
                        Colors.deepOrange : Colors.grey.shade800, size: 30,),
@@ -80,7 +86,7 @@ class _ProductCardState extends State<ProductCard> {
                           setState(() {
                             addedToCart = ! addedToCart;
 
-                            if (addedToCart == true) {
+                            if (addedToCart) {
                               widget.appUser.inCartProducts!.contains(widget.product) ?
                             {
                               widget.appUser.inCartProducts?.remove(widget.product),

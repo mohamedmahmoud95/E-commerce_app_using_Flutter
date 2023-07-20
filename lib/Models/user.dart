@@ -1,7 +1,15 @@
 
 import 'package:e_commerce_app/Models/product.dart';
 
-class User{
+
+// class User{
+//   String userID;
+//   User({
+//     required this.userID,
+// });
+// }
+
+class AppUser{
   String? firstName;
   String? lastName;
   String? userID;
@@ -16,7 +24,7 @@ class User{
   List<Product>? inCartProducts;
 
   //constructor
-  User({
+  AppUser({
     this.firstName,
     this.lastName,
     this.userID,
@@ -30,10 +38,13 @@ class User{
   });
 }
 
-User currentAppUser = User(
+
+AppUser currentAppUser = AppUser();
+
+AppUser sampleAppUser = AppUser(
   firstName: "firstName",
   lastName: "lastName",
-  inCartProducts: [],
+  inCartProducts: [shoe],
   profilePicUrl: "https://w7.pngwing.com/pngs/537/866/png-transparent-flutter-hd-logo.png",
   userID: "dfdf",
   userName: "userName",

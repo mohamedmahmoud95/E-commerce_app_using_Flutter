@@ -6,7 +6,7 @@ import '../UI constants/project_colors.dart';
 import 'market_screen.dart';
 
 class MyCartScreen extends StatefulWidget {
-  final User appUser;
+  final AppUser appUser;
   const MyCartScreen({Key? key, required this.appUser}) : super(key: key);
 
   @override
@@ -79,7 +79,7 @@ class _MyCartScreenState extends State<MyCartScreen> {
                           children: widget.appUser.inCartProducts!
                               .map((p) => ProductCardInMyCartScreen(
                                     product: p,
-                                    appUser: currentAppUser,
+                                    appUser: sampleAppUser,
                                   ))
                               .toList(),
                         ),

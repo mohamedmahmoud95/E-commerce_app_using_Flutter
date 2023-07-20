@@ -10,7 +10,7 @@ import '../../Models/user.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   final Product product;
-  final User appUser;
+  final AppUser appUser;
 
   const ProductDetailsScreen(
       {Key? key, required this.product, required this.appUser})
@@ -52,7 +52,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     Center(
                       child: SizedBox(
                         height: height/3,
-                        child: Image.network(widget.product.picUrl!),
+                        child: Hero(
+                            tag: widget.product.picUrl!,
+                            child: Image.network(widget.product.picUrl!)
+                        ),
                       ),
                     ),
 
@@ -233,7 +236,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                                     if (widget.product.numInCart > 0) {
                                       widget.product. numInCart--;
                                     }
-                                    else
+                                    if (widget.product.numInCart == 0)
                                       {
                                         widget.appUser.inCartProducts?.remove(widget.product);
                                       }

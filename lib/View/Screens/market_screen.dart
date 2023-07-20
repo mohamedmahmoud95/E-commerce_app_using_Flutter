@@ -1,7 +1,9 @@
 import 'package:e_commerce_app/Models/product.dart';
 import 'package:e_commerce_app/Models/user.dart';
 import 'package:e_commerce_app/View/Reusable%20widgets/product_card.dart';
+import 'package:e_commerce_app/View/Screens/signin_screen.dart';
 import 'package:e_commerce_app/View/UI%20constants/project_colors.dart';
+import 'package:e_commerce_app/firebase_services/firebase_auth_methods.dart';
 import 'package:flutter/material.dart';
 
 import 'my_cart_screen.dart';
@@ -14,6 +16,7 @@ class MarketScreen extends StatefulWidget {
 }
 
 class _MarketScreenState extends State<MarketScreen> {
+  FirebaseAuthMethods _authMethods = FirebaseAuthMethods();
   List <Product> products = [
     sampleProduct1,sampleProduct2,sampleProduct3,sampleProduct4,sampleProduct5,
   ];
@@ -40,8 +43,9 @@ class _MarketScreenState extends State<MarketScreen> {
           CircleAvatar(
             backgroundColor: lightOrange,
             child: IconButton(onPressed: (){
-              //navigate to notification screen
-            }, icon:  Icon(Icons.notifications, color: Colors.grey.shade800,)),
+              _authMethods.logout();
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignInScreen()));
+            }, icon:  Icon(Icons.logout, color: Colors.grey.shade800,)),
           ),
           const SizedBox(width: 10,),
         ],
@@ -55,7 +59,7 @@ class _MarketScreenState extends State<MarketScreen> {
             child: Wrap(
               spacing: 20,
               runSpacing: 20,
-              children: products.map((p) => ProductCard(product: p, appUser: currentAppUser,)).toList(),
+              children: products.map((p) => ProductCard(product: p, appUser: sampleAppUser,)).toList(),
 
             ),
           ),
@@ -65,7 +69,7 @@ class _MarketScreenState extends State<MarketScreen> {
 
     floatingActionButton: FloatingActionButton(
     onPressed: () {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  MyCartScreen(appUser: currentAppUser,),));
+    Navigator.of(context).push(MaterialPageRoute(builder: (context) =>  MyCartScreen(appUser: sampleAppUser,),));
     },
     backgroundColor: Colors.white,
     child: const Icon(Icons.shopping_cart, color: Colors.deepOrange,),

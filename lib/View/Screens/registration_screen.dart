@@ -1,7 +1,10 @@
 import 'package:e_commerce_app/View/Reusable%20widgets/rectangular_button_widget.dart';
+import 'package:e_commerce_app/View/Screens/landing_screen.dart';
+import 'package:e_commerce_app/View/Screens/market_screen.dart';
 import 'package:e_commerce_app/View/Screens/signin_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../../firebase_services/firebase_auth_methods.dart';
 import '../UI constants/project_colors.dart';
 
 class RegistrationScreen extends StatefulWidget {
@@ -14,13 +17,17 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   TextEditingController _nameController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+  
+  FirebaseAuthMethods _authMethods = FirebaseAuthMethods();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: mainWhite,
+
       appBar: AppBar(
         backgroundColor: mainWhite,
+        leading: BackButton(onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingScreen())), color: darkOrange,),
         elevation: 0,
         centerTitle: true,
         title: const Row(
@@ -50,14 +57,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       Positioned(
       child: Container(
       height: 150,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
-            image: const AssetImage('assets/purse.png', ),
+            image: AssetImage('assets/purse.png', ),
             fit: BoxFit.contain,
-            colorFilter: ColorFilter.mode(
-              Colors.white.withOpacity(1),
-              BlendMode.dstATop,
-            ),
+            // colorFilter: ColorFilter.mode(
+            //   Colors.white.withOpacity(1),
+            //   BlendMode.dstATop,
+            //  ),
           ),
         ),
       ),
@@ -127,7 +134,21 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             const SizedBox(height: 50.0),
             RectangularButton(
               backgroundColor: darkOrange,
-              onPressed: () {},
+              onPressed: () async {
+                dynamic signInResult =
+                await _authMethods.registerWithEmailAndPassword(
+                    _emailController.text,
+                    _passwordController.text, () {}, () {});
+
+                if (signInResult == null) {
+                  debugPrint("sign in error!");
+                }
+                else {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => const MarketScreen()));
+                }
+              },
+
               horizontalPadding: 16,
               child: const Text(
                 'Sign Up',
@@ -166,12 +187,18 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             const SizedBox(height: 10,),
             OutlinedButton.icon(
               onPressed: () {
-                // Continue with Google
+
+                _authMethods.signInAnonymously(() {
+                  //on login success
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const MarketScreen()));
+                }, () {
+                  //on login failed
+                });
               },
               icon:
-                  SizedBox(height: 25, child: Image.asset("assets/google.png")),
+              const SizedBox(height: 25, child: Icon(Icons.person, color: Colors.grey,)),
               label: const Text(
-                'Continue with Google',
+                'Sign in anonymously',
                 style: TextStyle(color: darkBlue, fontSize: 20),
               ),
             ),
